@@ -1,0 +1,22 @@
+{
+  "require": {
+    "slim/slim": "^4.9",
+    "slim/psr7": "^1.5",
+    "slim/php-view": "^3.1",
+    "twbs/bootstrap": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "[ -d public/css ] || mkdir -p public/css",
+      "[ -d public/js ] || mkdir -p public/js",
+      "cp vendor/twbs/bootstrap/dist/css/bootstrap.min.css public/css/",
+      "cp vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js public/js/",
+      "[ -f public/js/jquery.js ] || curl -o public/js/jquery.js https://code.jquery.com/jquery-3.6.0.min.js"
+    ]
+  }
+}
