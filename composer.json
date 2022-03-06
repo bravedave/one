@@ -17,6 +17,9 @@
       "cp vendor/twbs/bootstrap/dist/css/bootstrap.min.css public/css/",
       "cp vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js public/js/",
       "[ -f public/js/jquery.js ] || curl -o public/js/jquery.js https://code.jquery.com/jquery-3.6.0.min.js"
+    ],
+    "start" : [
+      "php -S localhost:8080 -t public public/_mvp.php"
     ]
   }
 }

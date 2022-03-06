@@ -10,7 +10,7 @@
 
 // load the autoloader
 if (preg_match('/\.(?:png|ico|jpg|jpeg|gif|css|js)$/', $_SERVER['REQUEST_URI'])) {
-  if (file_exists(trim($_SERVER['REQUEST_URI'], ' /\\')))
+  if (file_exists($file = __DIR__ . '/' . trim($_SERVER['REQUEST_URI'], ' /\\')))
     return false;    // serve the requested resource as-is.
 
 }
